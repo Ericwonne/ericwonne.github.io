@@ -6,6 +6,7 @@
 -->
 <html>
 <head>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Elbert's Nebula</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -23,7 +24,7 @@
         <!-- Header -->
         <header id="header" class="alt">
             <a href="index.html" class="logo">
-                <strong>Elbert's Nebula</strong> <!--<span>by HTML5</span></a>-->
+                <strong>Hello World</strong> <!--<span>by HTML5</span></a>-->
                 <nav>
                     <a href="#menu">Menu</a>
                 </nav>
@@ -46,9 +47,8 @@
         <!-- Banner -->
         <section id="banner" class="major">
             <div class="inner">
-			<img src="images/avatar.jpg" style="float:right;height:200px;width:200px">
                 <header class="major">
-                    <h2>Hi, my name is Elbert</h2>
+                    <h2>Write the code, change the world. Just do the best I can.</h2>
                 </header>
                 <div class="content">
                     <p>
@@ -156,7 +156,7 @@
                             <textarea name="message" id="message" rows="6"></textarea>
                         </div>
                         <ul class="actions">
-                            <li><input type="submit" value="Send Message" class="special" onclick="send_message()"/></li>
+                            <li><input type="submit" value="Send Message" class="special" onclick=" return send_message()"/></li>
                             <li><input type="reset" value="Clear" onclick="clear_message()"/></li>
                         </ul>
                     </form>
@@ -195,15 +195,15 @@
         <footer id="footer">
             <div class="inner">
                 <ul class="icons">
-                    <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                    <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="twitter.com" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="facebook.com" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="instagram.com" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="github.com" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="linkedin.com" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
                 </ul>
                 <ul class="copyright">
-                    <li>&copy; Untitled</li>
-                    <li>Design: <a href="#">HTML5</a></li>
+                    <li>&copy; Classfieds</li>
+                    <li>Designed By: <a href="#">ericwonne</a></li>
 
                 </ul>
             </div>
@@ -221,7 +221,8 @@
     <script src="assets/js/main.js"></script>
     <script>
         function send_message(){
-            alert("Message sent!")
+            alert("Message sent!");
+			return false;
         }
         function clear_message(){
             document.getElementById('message').value="";
