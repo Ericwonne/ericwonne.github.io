@@ -15,6 +15,12 @@
     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+		  emailjs.init("user_c2bacfqQPCiwPDEohxqAM");
+	   })();
+	</script>
 </head>
 <body>
 
@@ -158,7 +164,7 @@
                             <textarea name="message" id="message" rows="6"></textarea>
                         </div>
                         <ul class="actions">
-                            <li><input type="submit" value="Send Message" class="special" onclick=" return send_message()"/></li>
+                            <li><input type="submit" value="Send Message" class="special" onclick="return send_message()"/></li>
                             <li><input type="reset" value="Clear" onclick="clear_message()"/></li>
                         </ul>
                     </form>
@@ -223,14 +229,36 @@
     <script src="assets/js/main.js"></script>
     <script>
         function send_message(){
+			//Before sending email, validation is needed
+			if(validation()==false){
+				alert("Message cannot be empty and recheck your email address!");
+				return false;
+			}
+			var service_id = 'gmail';
+			var template_id = 'template_TqTqeGMg';
+			var template_params = {
+			name: document.getElementById('name').value,
+			reply_email: document.getElementById('message').value,
+			message: document.getElementById('message').value
+			};
+			emailjs.send(service_id,template_id,template_params);		
             alert("Message sent!");
 			return false;
         }
         function clear_message(){
             document.getElementById('message').value="";
-            document.getElementById('id').value="";
+            document.getElementById('name').value="";
             document.getElementById('email').value="";
         }
+		function validation(){
+			m=document.getElementById('message').value;
+            n=document.getElementById('name').value;
+            e=document.getElementById('email').value;
+			if(m=="" || n=="" || e==""){
+				return false;
+			}
+			return true;
+		}
     </script>
 </body>
 </html>
